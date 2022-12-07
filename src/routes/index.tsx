@@ -1,19 +1,18 @@
 import { Title } from "solid-start";
-import Counter from "~/components/Counter";
+import { Box, Flex } from "@hope-ui/core";
+
+import Nav from "~/components/Nav";
 
 export default function Home() {
   return (
     <main>
-      <Title>Hello World</Title>
-      <h1>Hello world!</h1>
-      <Counter />
-      <p>
-        Visit{" "}
-        <a href="https://start.solidjs.com" target="_blank">
-          start.solidjs.com
-        </a>{" "}
-        to learn how to build SolidStart apps.
-      </p>
+      <Box mx={12} my={10}>
+        <Flex justifyContent="end">
+          <Nav />
+        </Flex>
+      </Box>
+      <Title>Foxcliff Chess Club</Title>
+      <h1>Foxcliff Chess Club</h1>
     </main>
   );
 }
