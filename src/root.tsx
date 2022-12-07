@@ -30,8 +30,6 @@ export default function Root() {
         <HopeProvider>
           <Suspense>
             <ErrorBoundary>
-              <A href="/">Index</A>
-              <A href="/about">About</A>
               <Routes>
                 <FileRoutes />
               </Routes>
