@@ -2,7 +2,6 @@
 import { ColorModeScript, HopeProvider, injectCriticalStyle } from "@hope-ui/core";
 import { Suspense } from "solid-js";
 import {
-  A,
   Body,
   ErrorBoundary,
   FileRoutes,
@@ -25,8 +24,8 @@ export default function Root() {
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Body>
-        <ColorModeScript />
-        <HopeProvider>
+        <ColorModeScript initialColorMode="light" />
+        <HopeProvider initialColorMode="light">
           <Suspense>
             <ErrorBoundary>
               <Routes>

@@ -1,9 +1,9 @@
-import { createSignal, ParentComponent, ParentProps } from "solid-js";
-import { Drawer, HStack, Icon, IconButton, IconProps } from "@hope-ui/core";
+import { createSignal, ParentProps } from "solid-js";
+import { Box, Drawer, HStack, Icon, IconButton, IconProps } from "@hope-ui/core";
 
 function HambugerIcon(props: IconProps) {
   return (
-    <Icon viewBox="0 0 100 80" { ...props }>
+    <Icon viewBox="0 0 100 80" { ...props } _dark={{ fill: "neutral.200" }} >
       <rect width="100" height="20"></rect>
       <rect y="30" width="100" height="20"></rect>
       <rect y="60" width="100" height="20"></rect>
@@ -14,7 +14,7 @@ function HambugerIcon(props: IconProps) {
 export default function Nav(props: ParentProps) {
     const [isOpen, setIsOpen] = createSignal(false);
     return (
-      <>
+      <Box {...props}>
       <IconButton as="a" aria-label="Menu" size="lg" variant="plain" colorScheme="neutral" onClick={() => setIsOpen(true)}>
         <HambugerIcon boxSize="14" />
         <Drawer isOpen={isOpen()} onClose={() => setIsOpen(false)}>
@@ -29,6 +29,6 @@ export default function Nav(props: ParentProps) {
           </Drawer.Content>
         </Drawer>
       </IconButton>
-    </>
+    </Box>
   );
 }
