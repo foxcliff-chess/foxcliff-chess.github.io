@@ -17,8 +17,9 @@ jobs:
           npm i -g pnpm
           pnpm install
           pnpm build
-          mv dist/public github-pages
-          tar -czvf github-pages.tar.gz github-pages/
+          tar -czvf github-pages.tar.gz dist/
 
       - name: Publish generated content to GitHub Pages
         uses: actions/upload-pages-artifact@v1
+        with:
+          path: public
