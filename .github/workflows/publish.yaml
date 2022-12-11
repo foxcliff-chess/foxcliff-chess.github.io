@@ -20,4 +20,4 @@ jobs:
           tar -czvf github-pages.tar.gz github-pages/
 
       - name: Publish generated content to GitHub Pages
-        uses: actions/upload-pages-artifact
+        uses: actions/upload-pages-artifact@v1
