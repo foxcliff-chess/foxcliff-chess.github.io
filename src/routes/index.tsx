@@ -1,10 +1,12 @@
 import { Title } from "solid-start";
-import { Box, Button, Flex, Text, useColorMode } from "@hope-ui/core";
+import { Box, Button, Flex, Text, VStack, useColorMode } from "@hope-ui/core";
 
 import Nav from "~/components/Nav";
 import Hero from "~/components/Hero";
 import Section from "~/components/Section";
 import Footer from "~/components/Footer";
+
+import NextMeeting from "~/components/NextMeeting";
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -21,9 +23,11 @@ export default function Home() {
         </Flex>
         <Title>Foxcliff Chess Club</Title>
         <Hero />
-        <Section heading="About">
-          <Text size="xl">We meet the 1st and 3rd Thrusday of every month.</Text>
-        </Section>
+        <VStack spacing={8}>
+          <Section heading="About">
+            <Text size="xl">We meet the 1st and 3rd Thursday of every month. Our next meeting will take place on <NextMeeting />.</Text>
+          </Section>
+        </VStack>
         <Footer />
       </Box>
     </main>
