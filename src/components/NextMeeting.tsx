@@ -1,3 +1,5 @@
+import { Text, TextProps } from "@hope-ui/core";
+
 const meetingTime = '18:30:00';
 const meetingTimeZoneOffset = '-05:00';
 
@@ -77,7 +79,7 @@ export function* iterMeetings(startingFrom: Date): Generator<string, string> {
   }
 }
 
-export default function NextMeeting() {
+export default function NextMeeting(props: TextProps) {
   const today = new Date();
   const nextMeeting = new Date(iterMeetings(today).next().value);
   
@@ -128,6 +130,6 @@ export default function NextMeeting() {
 
   const meetingTime = [`${hour}:${minute}${amPm}`, ...time.slice(2)].join(' ');
   return (
-    `${day}, ${month} ${nextMeeting.getDate()}${suffix}, ${nextMeeting.getFullYear()} at ${meetingTime}`
+    <Text {...props}>{`${day}, ${month} ${nextMeeting.getDate()}${suffix}, ${nextMeeting.getFullYear()} at ${meetingTime}`}</Text>
   )
 }
