@@ -13,7 +13,7 @@ const alteredMeetings: Alteration[] = [
   // [2023, 11, 1, "16:30"],
 ];
 
-const nextMonth = (d: Date) => {
+export const nextMonth = (d: Date) => {
   const thisMonth = new Date();
   thisMonth.setFullYear(d.getFullYear());
   thisMonth.setMonth(d.getMonth());
@@ -23,25 +23,33 @@ const nextMonth = (d: Date) => {
   return thisMonth;
 }
 
-const meetingDate = (d: Date, alteration: Alteration[]) => {
-  if (alteration.length === 0) {
-    return `${d.toISOString().split('T')[0]}T${meetingTime}${meetingTimeZoneOffset}`;
+class MeetingDate {
+  date: Date;
+  alteration: Alteration[];
+  update: string | null;
+
+  constructor(d: Date, alteration: Alteration[]) {
+    this.date = new Date(`${d.toISOString().split('T')[0]}T${meetingTime}${meetingTimeZoneOffset}`);
+    this.alteration = alteration
+    this.update = null;
+
+    if (alteration.length) {
+      this.update = this.alteration[0].slice(-1)[0] as null | string;
+    }
+
+    if (this.update !== null) {
+      this.date = new Date(`${d.toISOString().split('T')[0]}T${this.update}${meetingTimeZoneOffset}`);
+    }
   }
 
-  const update = alteration[0].slice(-1)[0];
-  if (update === null) {
-    return update;
+  isScheduled() {
+    return this.alteration.length === 0 || this.update !== null;
   }
-
-  return `${d.toISOString().split('T')[0]}T${update}${meetingTimeZoneOffset}`;
 }
 
-export function* iterMeetings(startingFrom: Date): Generator<string, string> {
-  let thisMonth = new Date();
-  let firstOfMonth = new Date();
-  thisMonth.setMonth(startingFrom.getMonth());
-  firstOfMonth.setMonth(startingFrom.getMonth());
-  firstOfMonth.setDate(1);
+export function* iterMeetings(startingFrom: Date): Generator<MeetingDate, MeetingDate> {
+  let thisMonth = new Date(startingFrom.getFullYear(), startingFrom.getMonth(), startingFrom.getDate());
+  let firstOfMonth = new Date(startingFrom.getFullYear(), startingFrom.getMonth(), 1);
   const thursday = 4;
   let firstDay = 0;
   let firstThursday = 0;
@@ -50,27 +58,22 @@ export function* iterMeetings(startingFrom: Date): Generator<string, string> {
     firstDay = firstOfMonth.getDay();
     firstThursday = 1 + (thursday - firstDay + 7) % 7;
     thirdThursday = firstThursday + 14;
-    debugger;
     const alterations = alteredMeetings.filter(m => {
       return m[0] === thisMonth.getFullYear() && m[1] === thisMonth.getMonth();
     });
 
-    if (thisMonth.getDate() < firstThursday) {
-      thisMonth.setDate(firstThursday);
-      const alteration = alterations.filter(m => m[2] === 0);
-      const meeting = meetingDate(thisMonth, alteration);
-      if (meeting !== null) {
-        yield meeting;
-      }
+    if (thisMonth.getDate() <= firstThursday) {
+      const firstUpcoming = new Date(thisMonth.getFullYear(), thisMonth.getMonth(), firstThursday);
+      const firstAlteration = alterations.filter(m => m[2] === 0);
+      const firstMeeting = new MeetingDate(firstUpcoming, firstAlteration);
+      yield firstMeeting;
     }
 
-    if (thisMonth.getDate() < thirdThursday) {
-      thisMonth.setDate(thirdThursday);
-      const alteration = alterations.filter(m => m[2] === 1);
-      const meeting = meetingDate(thisMonth, alteration);
-      if (meeting !== null) {
-        yield meeting;
-      }
+    if (thisMonth.getDate() <= thirdThursday) {
+      const thirdUpcoming = new Date(thisMonth.getFullYear(), thisMonth.getMonth(), thirdThursday);
+      const thirdAlteration = alterations.filter(m => m[2] === 1);
+      const thirdMeeting = new MeetingDate(thirdUpcoming, thirdAlteration);
+      yield thirdMeeting;
     }
 
     thisMonth = nextMonth(thisMonth);
@@ -81,8 +84,14 @@ export function* iterMeetings(startingFrom: Date): Generator<string, string> {
 
 export default function NextMeeting(props: TextProps) {
   const today = new Date();
-  const nextMeeting = new Date(iterMeetings(today).next().value);
-  
+  const meetings = iterMeetings(today);
+  let meeting = meetings.next();
+  while (!meeting.value.isScheduled()) {
+    meeting = meetings.next();
+  }
+
+  const nextMeeting = new Date(meeting.value.date);
+
   const day = [
     "Sunday",
     "Monday",

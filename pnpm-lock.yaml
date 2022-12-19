@@ -7,6 +7,7 @@ specifiers:
   '@solidjs/router': ^0.5.0
   '@stitches/core': ^1.2.8
   clsx: ^1.2.1
+  pnpm: ^7.18.2
   solid-js: ^1.6.2
   solid-start: ^0.2.0
   solid-start-node: ^0.2.0
@@ -21,6 +22,7 @@ dependencies:
   '@solidjs/router': 0.5.1_solid-js@1.6.2
   '@stitches/core': 1.2.8
   clsx: 1.2.1
+  pnpm: 7.18.2
   solid-js: 1.6.2
   solid-start: 0.2.7_i2cnpwj3ojjdnkycik5yjsstli
   undici: 5.13.0
@@ -2525,6 +2527,12 @@ packages:
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
+
+  /pnpm/7.18.2:
+    resolution: {integrity: sha512-k3LCdsrTPqL4dVgCgjpdWHcwzhEA/YCu2ZFR/+EiFy91azuRQcWgQbYf5rPkYu5x1Dl8+2KtXKTlDcrSx5hnQw==}
+    engines: {node: '>=14.6'}
+    hasBin: true
+    dev: false
 
   /polka/1.0.0-next.22:
     resolution: {integrity: sha512-a7tsZy5gFbJr0aUltZS97xCkbPglXuD67AMvTyZX7BTDBH384FWf0ZQF6rPvdutSxnO1vUlXM2zSLf5tCKk5RA==}

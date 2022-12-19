@@ -7,6 +7,7 @@ import Section from "~/components/Section";
 import Footer from "~/components/Footer";
 
 import NextMeeting from "~/components/NextMeeting";
+import NextMeetingCalendar from "~/components/NextMeetingCalendar";
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -26,6 +27,7 @@ export default function Home() {
         <VStack spacing={8}>
           <Section heading="About">
             <Text size="xl">We meet the 1st and 3rd Thursday of every month. Our next meeting will take place on <NextMeeting fontWeight="bold" /></Text>
+            <NextMeetingCalendar />
           </Section>
         </VStack>
         <Footer />
