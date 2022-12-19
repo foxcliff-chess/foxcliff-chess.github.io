@@ -50,7 +50,7 @@ const styleIsMeetingDay = (meetingDay: MeetingDay, props: { day: Date, forMonth:
   return {
     color: "success.600", bg: "success.200",
     _dark: {
-      color: "success.200", bg: "success.800", borderColor: "neutral.200"
+      color: "success.200", bg: "success.900", borderColor: "neutral.200"
     }
   }
 };
