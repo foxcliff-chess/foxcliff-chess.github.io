@@ -11,7 +11,6 @@ const alteredMeetings: Alteration[] = [
 
   // this would reschedule the last meeting of December, 2023 for 4:30pm EST
   // [2023, 11, 1, "16:30"],
-  [2023, 6, 0, null],
 ];
 
 export const nextMonth = (d: Date) => {
