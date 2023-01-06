@@ -25,7 +25,7 @@ export default function Home() {
         <Title>Foxcliff Chess Club</Title>
         <Hero />
         <VStack spacing={8}>
-          <Section heading="About">
+          <Section heading="Calendar">
             <Text size="xl">We meet the 1st and 3rd Thursday of every month. Our next meeting will take place on <NextMeeting fontWeight="bold" /></Text>
             <NextMeetingCalendar />
           </Section>
