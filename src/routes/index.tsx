@@ -1,5 +1,5 @@
 import { Title } from "solid-start";
-import { Box, Button, Flex, Text, VStack, useColorMode } from "@hope-ui/core";
+import { Anchor, Box, Button, Flex, Text, VStack, useColorMode } from "@hope-ui/core";
 
 import Nav from "~/components/Nav";
 import Hero from "~/components/Hero";
@@ -59,8 +59,10 @@ export default function Home() {
             </Text>
 
             <Text m="2" size="xl">
-            Constitution and Bylaws were adopted on January 5, 2023, and the informal Foxcliff chess club became The FoxcliffChess Club.
-            See that document in another section of this site.
+            The Constitution and Bylaws were adopted on January 5, 2023, and the informal Foxcliff chess club became The FoxcliffChess Club.
+            </Text>
+            <Text m="2" size="xl">
+            <Anchor href="https://github.com/foxcliff-chess/constitution-and-bylaws"> Click here to view the Constitution and Bylaws on Github.</Anchor>
             </Text>
           </Section>
 
