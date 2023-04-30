@@ -18,7 +18,7 @@ jobs:
 
       - name: Build dist directory
         run: |
-          npm i -g pnpm --no-frozen-lockfile
+          npm i -g pnpm
           pnpm install
           pnpm build
 
