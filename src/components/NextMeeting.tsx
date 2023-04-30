@@ -1,7 +1,9 @@
 import { Text, TextProps } from "@hope-ui/core";
 
 const meetingTime = '18:30:00';
-const meetingTimeZoneOffset = '-05:00';
+
+const meetingTimeZoneOffsetEdt = '-04:00';
+const meetingTimeZoneOffsetEst = '-05:00';
 
 type Alteration = [Number, Number, Number, null | string];
 const alteredMeetings: Alteration[] = [
@@ -29,6 +31,8 @@ class MeetingDate {
   update: string | null;
 
   constructor(d: Date, alteration: Alteration[]) {
+    const dateEst = new Date(`${d.toISOString().split('T')[0]}T${meetingTime}${meetingTimeZoneOffsetEst}`);
+    const meetingTimeZoneOffset = dateEst.toTimeString().split(' ')[0] === meetingTime ? meetingTimeZoneOffsetEst : meetingTimeZoneOffsetEdt;
     this.date = new Date(`${d.toISOString().split('T')[0]}T${meetingTime}${meetingTimeZoneOffset}`);
     this.alteration = alteration
     this.update = null;
