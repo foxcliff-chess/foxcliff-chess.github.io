@@ -1,5 +1,7 @@
-import { createSignal, ParentProps } from "solid-js";
+import { ParentProps } from "solid-js";
 import { Box, Drawer, HStack, Icon, IconButton, IconProps } from "@hope-ui/core";
+
+import navIsOpen from "~/signals/nav/isOpen";
 
 function HambugerIcon(props: IconProps) {
   return (
@@ -12,7 +14,7 @@ function HambugerIcon(props: IconProps) {
 }
 
 export default function Nav(props: ParentProps) {
-    const [isOpen, setIsOpen] = createSignal(false);
+    const [isOpen, setIsOpen] = navIsOpen;
     return (
       <Box {...props}>
       <IconButton as="a" aria-label="Menu" size="lg" variant="plain" colorScheme="neutral" onClick={() => setIsOpen(true)}>
