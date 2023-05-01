@@ -58,15 +58,16 @@ export default function Home() {
 
             <Text m="2" size="xl">
               <ul>
+                <li>The Martinsville High School Chess A Team finished 4th in the State.</li>
                 <li>Jackson Matthews won his division in the regional finals.</li>
                 <li>Carter Dawson finished third in the junior open division</li>
-                <li>Kevin Huang finished 2 nd and Ryan Pilat finished in 7 th in the State individual Championships</li>
-                <li>Kevin Huang, Ryan Pilat, and Joel Young, and their 4th teammate, Tom, completed in the Indiana</li>
+                <li>Kevin Huang finished 2nd in the State individual Championships</li>
+                <li>Ryan Pilat finished in 7th in the State individual Championships</li>
               </ul>
             </Text>
 
             <Text m="2" size="xl">
-              Team Championships in Pittsboro, Indiana.
+              Kevin Huang, Ryan Pilat, and Joel Young, and their 4th teammate, Tom, completed in the Indiana Team Championships in Pittsboro, Indiana.
               Their team called “Dark Horse & the Kingslayers” won 2.5 rounds out of 4.
               They were the top team rated under 1500 (meaning they won a little money), and they tied for 3rd place overall!
             </Text>
@@ -76,17 +77,19 @@ export default function Home() {
             </Text>
 
             <Text m="2" size="xl">
-              <ul>
-                <li>The Martinsville High School Chess A Team finished 4th in the State.</li>
-              </ul>
-            </Text>
-
-            <Text m="2" size="xl">
               Many of our members volunteered to help run the Indiana Scholastic Championships held on March 18th at Martinsville High School.
             </Text>
 
             <Text m="2" size="xl">
-              Check out our new snazzy Foxcliff Chess Club T- Shirts. They are available in various sizes, and the prices range from $8.50 to $12.
+              Congratulations to Bill Pilat who has taken the reigns of the President of the Scholastic Chess of Indiana.
+            </Text>
+
+            <Text m="2" size="xl">
+              Three of our members will work to achieve the title of Club Tournament Director this year.
+            </Text>
+
+            <Text m="2" size="xl">
+              Check out our new snazzy Foxcliff Chess Club T- Shirts.
             </Text>
 
             <Center>
@@ -97,13 +100,8 @@ export default function Home() {
             </Center>
 
             <Text m="2" size="xl">
-              Congratulations to Bill Pilat who has taken the reigns of the President of the Scholastic Chess of Indiana.
+              They are available in various sizes, and the prices range from $8.50 to $12.
             </Text>
-
-            <Text m="2" size="xl">
-              Three of our members will work to achieve the title of Club Tournament Director this year.
-            </Text>
-
           </Section>
           <Section heading="History">
             <Text m="2" size="xl">
