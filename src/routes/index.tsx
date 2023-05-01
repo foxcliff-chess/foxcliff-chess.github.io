@@ -58,8 +58,8 @@ export default function Home() {
 
             <Text m="2" size="xl">
               <ul>
-                <li>The Martinsville High School Chess A Team finished 4th in the State.</li>
-                <li>Jackson Matthews won his division in the regional finals.</li>
+                <li>The Martinsville High School Chess A Team finished 4th in the State</li>
+                <li>Jackson Matthews won his division in the regional finals</li>
                 <li>Carter Dawson finished third in the junior open division</li>
                 <li>Kevin Huang finished 2nd in the State individual Championships</li>
                 <li>Ryan Pilat finished in 7th in the State individual Championships</li>
