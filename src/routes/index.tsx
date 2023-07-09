@@ -75,7 +75,7 @@ export default function Home() {
             </Center>
 
             <Text m="2" size="xl">
-            Of course, we still meet and play every other Thursday at the beautiful Manor House in the Foxcliff North neighborhood in Martinsville while we plan our next visit.
+            Of course, we still meet and play the first and third Thursday of every month at the beautiful Manor House in the Foxcliff North neighborhood in Martinsville while we plan our next visit.
             Email us at foxcliffchess@gmail.com and we can see about arranging a meet and greet. There are several clubs in Greenwood that we've taken notice of in particular!
             </Text>
 
