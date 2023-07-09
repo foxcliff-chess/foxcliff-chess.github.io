@@ -7,7 +7,7 @@ export default function Section(props: Props) {
 
   return (
     <Box maxW={880}>
-      <VStack spacingY={12} my={12}>
+      <VStack spacingY={12} my={8}>
         <Divider labelPlacement="center" thickness="3px">
           <Anchor href={`/#section-${slug}`}>
             <Heading size="2xl">{props.heading}</Heading>
