@@ -53,55 +53,39 @@ export default function Home() {
         <VStack spacing={8}>
           <Section heading="Club News">
             <Text m="2" size="xl">
-              Congratulations to Club members who had success in recent tournaments:
+            This summer's theme has been networking, travelling, and visiting chess clubs in an effort to introduce ourselves to the community.
             </Text>
 
             <Text m="2" size="xl">
-              <ul>
-                <li>The Martinsville High School Chess A Team finished 4th in the State</li>
-                <li>Jackson Matthews won his division in the regional finals</li>
-                <li>Carter Dawson finished third in the junior open division</li>
-                <li>Kevin Huang finished 2nd in the State individual Championships</li>
-                <li>Ryan Pilat finished in 7th in the State individual Championships</li>
-              </ul>
+            In May, one of our club members ventured all the way out to Gilpin County, Colorado to play a few games of chess with the locals.
+            Just like Foxcliff Chess Club, they are also a newly founded club, which started up earlier this year. Let's keep in touch!
             </Text>
 
-            <Text m="2" size="xl">
-              Kevin Huang, Ryan Pilat, and Joel Young, and their 4th teammate, Tom, completed in the Indiana Team Championships in Pittsboro, Indiana.
-              Their team called “Dark Horse & the Kingslayers” won 2.5 rounds out of 4.
-              They were the top team rated under 1500 (meaning they won a little money), and they tied for 3rd place overall!
-            </Text>
-
-            <Text m="2" size="xl">
-              Congratulations, gentlemen!
-            </Text>
-
-            <Text m="2" size="xl">
-              Many of our members volunteered to help run the Indiana Scholastic Championships held on March 18th at Martinsville High School.
-            </Text>
-
-            <Text m="2" size="xl">
-              Congratulations to Bill Pilat who has taken the reigns of the President of the Scholastic Chess of Indiana.
-            </Text>
-
-            <Text m="2" size="xl">
-              Three of our members will work to achieve the title of Club Tournament Director this year.
-            </Text>
-
-            <Text m="2" size="xl">
-              Check out our new snazzy Foxcliff Chess Club T- Shirts.
-            </Text>
-
-            <Center>
-              <Image src="/i/tshirt/front.jpg"/>
-            </Center>
-            <Center>
-              <Image src="/i/tshirt/back.jpg"/>
+            <Center p="4">
+              <Image src="/i/2023-05-01.jpg"/>
             </Center>
 
             <Text m="2" size="xl">
-              They are available in various sizes, and the prices range from $8.50 to $12.
+            Foxcliff Chess Club stormed the Bloomington group that meets at Buffa Louie's at the Gables, right next to the Indiana University campus downtown.
+            We will no doubt be returning there for future events, especially while the weather is nice enough to play outside.
             </Text>
+
+            <Center p="4">
+              <Image src="/i/2023-06-00.jpg"/>
+            </Center>
+
+            <Text m="2" size="xl">
+            Of course, we still meet and play every other Thursday at the beautiful Manor House in the Foxcliff North neighborhood in Martinsville while we plan our next visit.
+            Email us at foxcliffchess@gmail.com and we can see about arranging a meet and greet. There are several clubs in Greenwood that we've taken notice of in particular!
+            </Text>
+
+            <Center p="4">
+              <Image src="/i/2023-07-00.jpg"/>
+            </Center>
+
+            <Button mt="12" w="100%" variant="plain" onClick={() => { window.location.pathname = "/news"; }}>
+                See more club news here.
+            </Button>
           </Section>
           <Section heading="History">
             <Text m="2" size="xl">
